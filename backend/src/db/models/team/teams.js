@@ -17,8 +17,10 @@ const playerSchema = new Schema({
 const teamSchema = new Schema({
   name: { type: String, unique: true, required: true },
   tag: String,
-  region: { type: String, enum: gameConfig.regionList },
+  region: { type: String, required: true, enum: gameConfig.regionList },
   manager: { type: managerSchema, ref: "User" },
+  applys: [{ type: Schema.Types.ObjectId, ref: `TeamApply` }],
+  appliesCount: Number,
   players: [{ type: playerSchema, ref: "User" }],
   needPlayers: Boolean,
 });

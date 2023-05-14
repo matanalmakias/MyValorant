@@ -8,7 +8,6 @@ const getTeams = async (req, res, next) => {
     }
   });
   res.json(teams);
-  next();
 };
 
 export { getTeams };

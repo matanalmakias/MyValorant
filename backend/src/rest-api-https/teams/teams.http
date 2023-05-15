@@ -1,0 +1,47 @@
+#### //--------------Approve application to team------------------
+PUT http://localhost:3001/api/teams/approvePlayer/6460ec36c94c10ebdf046b96/yes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjA0NjE4MDE3ZjU3NGRmZjQ0NjU5NSIsImlhdCI6MTY4NDAzMTAxMiwiZXhwIjoxNjg2NjIzMDEyfQ.8YCdTGAjSRSqBjhNOooopmua-75C-PmLl70nYH7qJro
+
+###
+//---------------------Create A Team------------------------
+POST http://localhost:3001/api/teams/createTeam
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjA0NjE4MDE3ZjU3NGRmZjQ0NjU5NSIsImlhdCI6MTY4NDAzMTAxMiwiZXhwIjoxNjg2NjIzMDEyfQ.8YCdTGAjSRSqBjhNOooopmua-75C-PmLl70nYH7qJro
+Content-Type: application/json
+
+{
+  "name": "Team-O1",
+  "region":"Europe"
+}
+
+
+###########
+//Search for a teams
+GET http://localhost:3001/api/teams
+
+
+
+###
+//--------------Apply for a Team--------------
+POST http://localhost:3001/api/teams/apply/64606a37a33a1f2ecac18628
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjBlYmUyYzk0YzEwZWJkZjA0NmI4ZSIsImlhdCI6MTY4NDA3MzQ1NCwiZXhwIjoxNjg2NjY1NDU0fQ.2ty9S9EbaSmfoCO-FS4_cwiPUebkYxkTe9tXruNgEwc
+Content-Type: application/json
+
+{
+  "letter":"sads",
+  "preferredRole":"Phoenix",
+  "links": [
+    {
+      "title":"adsdsadsadasdas",
+      "link":"sdadasdas.co.il"
+      }
+      ]
+}
+
+#######
+POST http://localhost:3001/api/teams/chatMsg
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjBlYmUyYzk0YzEwZWJkZjA0NmI4ZSIsImlhdCI6MTY4NDA3MzQ1NCwiZXhwIjoxNjg2NjY1NDU0fQ.2ty9S9EbaSmfoCO-FS4_cwiPUebkYxkTe9tXruNgEwc
+
+{
+    "msg":"sadasdas"
+}

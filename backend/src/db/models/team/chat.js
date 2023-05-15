@@ -8,6 +8,7 @@ const chatMsgSchema = new Schema({
     _id: { type: Schema.Types.ObjectId, ref: `User` },
     name: { type: String, ref: "User" },
   },
+  createdAt: { type: Date, default: Date.now() },
 });
 const teamChatSchema = new Schema({
   msgs: [chatMsgSchema],

@@ -21,6 +21,7 @@ export default {
     `KAY/O`,
     `Fade`,
     `Gekko`,
+    null,
   ],
   regionList: [
     `US West`,

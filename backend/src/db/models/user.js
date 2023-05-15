@@ -11,7 +11,7 @@ const addressSchema = new Schema({
 });
 const teamSchema = new Schema({
   name: String,
-  role: { type: String, required: true },
+  role: { type: String, default: "member" },
   _id: {
     type: Schema.Types.ObjectId,
     ref: `Team`,
@@ -24,7 +24,7 @@ const applysSchema = new Schema({
 });
 const userSchema = new Schema({
   isComplete: { type: Boolean, required: false, default: false, unique: false },
-  phoneNumber: { type: String, unique: true },
+  phoneNumber: { type: String, unique: true, sparse: true, default: NaN },
   region: { type: String, enum: gameConfig.regionList },
   nickName: { type: String, required: true, unique: true },
   address: addressSchema,
@@ -38,6 +38,7 @@ const userSchema = new Schema({
       ref: "Role",
     },
   ],
+  createdAt: { type: Date, default: Date.now() },
 });
 
 const User = model("User", userSchema);

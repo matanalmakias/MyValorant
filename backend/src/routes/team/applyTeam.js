@@ -2,6 +2,12 @@ import mongoose from "mongoose";
 import { TeamApply } from "../../db/models/team/apply.js";
 import { Team } from "../../db/models/team/teams.js";
 import nodeEvent from "../../nodeEvents/nodeEvents.js";
+async function AlreadyHasTeam(req, res, next) {
+  if (req.user.team !== undefined) {
+    return res.json({ msg: `You already have a team` }).status(400);
+  }
+  next();
+}
 async function checkIfAlreadyApplied(req, res, next) {
   const teamId = req.params.teamId;
   const isAlreadyApplied = req.user.applys.some(
@@ -20,8 +26,10 @@ async function createTeamApply(req, res, next) {
   const newApply = new TeamApply({
     letter: req.body.letter,
     links: req.body.links,
-    creator: req.userId,
-    teamId: team._id,
+    preferredRole: req.body.preferredRole,
+
+    creator: mongoose.Types.ObjectId(req.userId),
+    teamId: mongoose.Types.ObjectId(team._id),
   });
 
   req.newApply = newApply;
@@ -62,4 +70,5 @@ export {
   emitTeamsUpdate,
   saveUserApply,
   updateTeamApplyCount,
+  AlreadyHasTeam,
 };

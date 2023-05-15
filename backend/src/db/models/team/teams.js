@@ -10,6 +10,7 @@ const managerSchema = new Schema({
 });
 
 const playerSchema = new Schema({
+  nickName: { type: String, ref: `User` },
   user: { type: Schema.Types.ObjectId, ref: "User" },
   gameRole: { type: String, enum: gameConfig.gameRoles },
 });

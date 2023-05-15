@@ -14,12 +14,21 @@ import {
 } from "./createTeam.js";
 import { getTeams } from "./getTeams.js";
 import {
+  AlreadyHasTeam,
   checkIfAlreadyApplied,
   createTeamApply,
   emitTeamsUpdate,
   saveUserApply,
   updateTeamApplyCount,
 } from "./applyTeam.js";
+import {
+  approvePlayer,
+  checkIsManager,
+  checkIsPending,
+  isAlreadyHasTeam,
+} from "./approvePlayer.js";
+import { TeamChat } from "../../db/models/team/chat.js";
+import { addTeamChatMsg, checkTeamChatRoom } from "./chatMsg.js";
 const router = Router();
 
 router.post(
@@ -37,6 +46,7 @@ router.get("/", getTeams);
 router.post(
   "/apply/:teamId",
   validateToken,
+  AlreadyHasTeam,
   checkIfAlreadyApplied,
   createTeamApply,
   saveUserApply,
@@ -46,5 +56,17 @@ router.post(
     res.json({ msg: `The apply has been sent to the leader!` });
   }
 );
+
+// Route with middleware pipeline
+router.put(
+  "/approvePlayer/:applyId/:sign",
+  validateToken,
+  checkIsManager,
+  checkIsPending,
+  isAlreadyHasTeam,
+  approvePlayer
+);
+
+router.post("/chatMsg", validateToken, checkTeamChatRoom, addTeamChatMsg);
 
 export { router as teamRouter };

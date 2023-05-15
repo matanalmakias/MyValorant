@@ -51,7 +51,9 @@ const createTeam = async (req, res) => {
       name: req.body.name,
       region: req.body.region,
       manager: { _id: req.user._id, name: req.user.nickName },
-      players: [{ _id: req.user._id, gameRole: "Jett" }],
+      players: [
+        { _id: req.user._id, gameRole: "Jett", nickName: req.user.nickName },
+      ],
     });
 
     req.user.team = {

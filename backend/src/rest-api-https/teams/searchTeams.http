@@ -1,0 +1,4 @@
+
+###########
+//Search for a teams
+GET http://localhost:3001/api/teams

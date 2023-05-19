@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import dbConfig from "./config/db.config.js";
 import { Role } from "./models/role.js";
-
+import { GeneralChat } from "../db/models/generalChat.js";
 const { HOST, DB, PORT, ROLES, DAYS } = dbConfig;
 
 const connect = async () => {
@@ -15,7 +15,7 @@ const connect = async () => {
   console.log(`Succesfully connected to the database ${DB}`);
   initDB();
 };
-const initDB = () => {
+const initDB = async () => {
   //save without joi
   //if Day collection is Empty:
   Role.estimatedDocumentCount((err, count) => {
@@ -31,6 +31,11 @@ const initDB = () => {
       });
     }
   });
+  const isGeneralChatExist = await GeneralChat.findOne({ name: `General` });
+  if (!isGeneralChatExist) {
+    const generalChat = new GeneralChat({ name: `General`, msgs: [] });
+    await generalChat.save();
+  }
 };
 
 const initDB2 = async () => {

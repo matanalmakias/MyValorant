@@ -18,7 +18,9 @@ export const validateParams = [
 // Middleware to check if user already exists with the given nickname
 export const checkNickNameExists = async (req, res, next) => {
   try {
-    const { nickName } = req.params;
+    const { nickName, email } = req.params;
+    const existingEmail = await User.findOne({ email });
+    if (existingEmail) return next();
     const existingUser = await User.findOne({ nickName });
     if (existingUser) {
       return res.status(400).json({ msg: `This nickname is already taken` });

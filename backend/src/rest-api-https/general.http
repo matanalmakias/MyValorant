@@ -1,8 +1,24 @@
 #################
-POST http://localhost:3001/api/auth/tryLogin/daneles271@gmail.com/DangiG
+POST http://localhost:3001/api/auth/tryLogin/daneles271@gmail.com
 
 ###########
-POST http://localhost:3001/api/auth/finalLogin/daneles271@gmail.com/106998
+POST http://localhost:3001/api/auth/finalLogin/daneles271@gmail.com/377836
+
+###
+POST http://localhost:3001/api/auth/privateMsg/64604618017f574dff446595
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjBlYmUyYzk0YzEwZWJkZjA0NmI4ZSIsImlhdCI6MTY4NDQzODMxNCwiZXhwIjoxNjg3MDMwMzE0fQ.2u1KZc-N2A7ks4L5_0npRS_x2VBYM33IOYZAK2iULPE
+Content-Type: application/json
+
+{
+    "msg":"Hey."
+}
 
 
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjA0NjE4MDE3ZjU3NGRmZjQ0NjU5NSIsImlhdCI6MTY4NDAzMTAxMiwiZXhwIjoxNjg2NjIzMDEyfQ.8YCdTGAjSRSqBjhNOooopmua-75C-PmLl70nYH7qJro
+### -------General Chat----
+POST http://localhost:3001/api/auth/generalChat
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjBlYmUyYzk0YzEwZWJkZjA0NmI4ZSIsImlhdCI6MTY4NDQzODMxNCwiZXhwIjoxNjg3MDMwMzE0fQ.2u1KZc-N2A7ks4L5_0npRS_x2VBYM33IOYZAK2iULPE
+Content-Type: application/json
+
+{
+    "msg":"Hey."
+}

@@ -41,7 +41,7 @@ router.post(
   createTeam
 );
 
-router.get("/", getTeams);
+router.get("/:rank?/:location?", getTeams);
 
 router.post(
   "/apply/:teamId",

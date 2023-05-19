@@ -6,6 +6,7 @@ import { User } from "../db/models/user.js";
 import { Role } from "../db/models/role.js";
 import { validateToken } from "../middleware/user/validateToken.js";
 import { isManager } from "../middleware/roles/isManager.js";
+import { GeneralChat } from "../db/models/generalChat.js";
 import nodeEvents from "../nodeEvents/nodeEvents.js";
 import multer from "multer";
 import dotenv from "dotenv";
@@ -19,6 +20,11 @@ import {
   saveUser,
   sendVerificationCode,
 } from "./users/loginTry.js";
+import {
+  getUsers,
+  initializePrivateMsg,
+  sendPrivateMessage,
+} from "./users/privateMsg.js";
 
 const router = Router();
 
@@ -135,7 +141,7 @@ router.post("/existLogin/:phoneNum/:verfCode", async (req, res) => {
 //<-----------Login Try HERE --------------->
 
 router.post(
-  "/tryLogin/:email/:nickName",
+  "/tryLogin/:email/:nickName?",
   validateParams,
   checkNickNameExists,
   checkEmailExists,
@@ -144,5 +150,29 @@ router.post(
   saveUser,
   sendVerificationCode
 );
+
+router.post(
+  "/privateMsg/:userId",
+  validateToken,
+  getUsers,
+  initializePrivateMsg,
+  sendPrivateMessage
+);
+router.post("/generalChat", validateToken, async (req, res) => {
+  try {
+    const generalChat = await GeneralChat.findOne({ name: "General" });
+    const sentMsg = {
+      msg: req.body.msg,
+      senderId: req.userId,
+    };
+    generalChat.msgs.push(sentMsg);
+    await generalChat.save();
+
+    res.json({ msg: "Message sent successfully!" });
+    nodeEvents.emit("chat-update");
+  } catch (error) {
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
 
 export { router as authRouter };

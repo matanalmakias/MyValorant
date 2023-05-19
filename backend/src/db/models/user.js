@@ -22,15 +22,33 @@ const applysSchema = new Schema({
   applyId: { type: Schema.Types.ObjectId, ref: `TeamApply` },
   teamId: { type: Schema.Types.ObjectId, ref: `Team` },
 });
+const privateMsgSchema = new Schema({
+  recivedMsg: [
+    {
+      _id: false,
+      msg: String,
+      user: { type: Schema.Types.ObjectId, ref: `User` },
+    },
+  ],
+  sentMsg: [
+    {
+      _id: false,
+      msg: String,
+      user: { type: Schema.Types.ObjectId, ref: `User` },
+    },
+  ],
+});
+
 const userSchema = new Schema({
-  isComplete: { type: Boolean, required: false, default: false, unique: false },
-  phoneNumber: { type: String, unique: true, sparse: true, default: NaN },
+  isComplete: { type: Boolean, required: false, default: false },
+  phoneNumber: { type: String, unique: true, sparse: true, default: null },
   region: { type: String, enum: gameConfig.regionList },
   nickName: { type: String, required: true, unique: true },
   address: addressSchema,
-  verficationCode: { type: Number, required: false, unique: true },
+  verificationCode: { type: Number, required: false, unique: true },
   email: { type: String, required: true, unique: true },
   team: teamSchema,
+  privateMsg: privateMsgSchema,
   applys: [applysSchema],
   roles: [
     {

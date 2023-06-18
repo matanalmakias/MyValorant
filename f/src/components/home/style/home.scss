@@ -1,0 +1,62 @@
+.hero-section {
+    background-image: url('../../../assets/cosmic-background-with-colorful-laser-lights.jpg');
+    background-size: cover;
+    min-height: 700px!important;
+}
+.div-1 {
+    background-color: #4444449d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.call-to-action-btn {
+    background-color: #ff3366;
+    color: white;
+    padding: 10px 19px;
+    font-size: 37px;
+    font-weight: bold;
+    line-height: 30px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+        transition: 0.1s;
+}
+
+.call-to-action-btn:hover {
+    background-color: #ff5b879c;
+        color: #fff8f8f8;
+}
+.heading{
+    font-size: 100px;
+    font-weight: 600;
+    line-height: 100px;
+    text-shadow: 2px 2px 4px rgba(136, 14, 116, 0.534);
+
+}
+
+.sub-heading {
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    line-height: 0px;
+}
+@media screen and (max-width: 767px) {
+
+    .heading {
+            font-size: 70px;
+            font-weight: 600;
+            line-height: 70px;
+            text-shadow: 2px 2px 4px rgba(136, 14, 116, 0.534);
+    
+        }
+                .sub-heading {
+                    font-size: 25px;
+                    text-align: center;
+                    letter-spacing: 4px;
+                    font-weight: 400;
+                    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+                    line-height: 30px;
+                }
+}

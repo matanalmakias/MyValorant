@@ -1,0 +1,121 @@
+.bg1 {
+    background: linear-gradient(to right, #9896f338, #fbf8ff54);
+    border-radius: 45px;
+}
+
+.bg2 {
+    background: linear-gradient(rgb(255, 255, 255), rgba(239, 245, 255, 0.774));
+    border-radius: 45px;
+}
+
+.bg3 {
+    background-color: #0702027c;
+    border-radius: 45px;
+}
+
+.bg4 {
+    border-radius: 25px 0px 35px 0px;
+    background: linear-gradient(to right, rgb(254, 251, 255), rgba(240, 240, 255, 0.596));
+}
+
+.bg5 {
+    padding: 10px;
+    border-radius: 45px;
+    border: 3px solid rgba(255, 255, 255, 0.055);
+    background: linear-gradient(to right, rgba(24, 19, 90, 0.116), rgba(255, 249, 249, 0.301));
+}
+
+.bg6 {
+    border-radius: 25px !important;
+    background: linear-gradient(to right, rgba(12, 22, 112, 0.432), rgba(88, 26, 26, 0.212));
+}
+
+.border1 {
+    border: 1px solid rgba(255, 249, 254, 0.089);
+}
+
+.btn1 {
+    padding: 0px;
+    color: rgb(107, 26, 173);
+    background: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 231, 235, 0.993));
+    font-size: 33px;
+}
+
+.btn2 {
+    padding: 0px;
+    text-align: center;
+    color: rgb(80, 25, 126);
+    background: linear-gradient(to right, rgb(209, 182, 245), rgba(192, 114, 243, 0.993));
+    font-size: 23px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn2:hover {
+    background: linear-gradient(to right, rgb(255, 231, 249), rgba(255, 232, 246, 0.993));
+    transition: 0.3s;
+}
+
+.btn1:hover {
+    background: linear-gradient(to right, rgb(255, 231, 249), rgba(255, 232, 246, 0.993));
+    transition: 0.3s;
+}
+
+.heading4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #24096ed8;
+    letter-spacing: 1px;
+}
+
+.btn3 {
+    border: none;
+    padding: 10px;
+    color: #8400fffb;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 12px;
+    border-radius: 15px;
+}
+.sub-heading2{
+    font-size: 18x;
+    letter-spacing: 2px;
+}
+.btn3:hover {
+    background-color: #fff;
+    color: #000000ad;
+}
+
+.btn4 {
+    border: none;
+    padding: 10px;
+    color: #8400fffb;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    border-radius: 15px;
+}
+
+.btn4:hover {
+    background-color: #fff;
+    color: #000000ad;
+}
+
+.bg7{
+    font-size: 23px;
+    border: none;
+    padding: 10px;
+    color: #fdfcff;
+    background-color: #db5959;
+    margin: 10px;
+    border-radius: 10px;transition: 0.3s;
+}
+.bg7:active{
+transition: 0.3s;
+    background-color: #272ae4;
+ 
+}
+.bg7:hover{transition: 0.3s;
+    background-color: #7678f5;
+ 
+}

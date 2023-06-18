@@ -1,0 +1,20 @@
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    transition: 0.3s;
+}
+
+.nav-item {
+    margin-right: 1rem;
+    font-size: 19px;
+    cursor: pointer;
+    font-weight: bold;
+    color: rgba(9, 9, 56, 0.671);
+    text-decoration: none;
+    background: linear-gradient(white,white);
+    transition: 0.5s ;
+    border: 2px solid rgba(0, 0, 0, 0.014);
+}

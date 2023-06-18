@@ -1,3 +1,0 @@
-#### //--------------Approve application to team------------------
-PUT http://localhost:3001/api/teams/approvePlayer/6460ec36c94c10ebdf046b96/yes
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjA0NjE4MDE3ZjU3NGRmZjQ0NjU5NSIsImlhdCI6MTY4NDAzMTAxMiwiZXhwIjoxNjg2NjIzMDEyfQ.8YCdTGAjSRSqBjhNOooopmua-75C-PmLl70nYH7qJro

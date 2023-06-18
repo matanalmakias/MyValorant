@@ -1,0 +1,79 @@
+
+.how-it-works {
+    min-height: 600px;
+    position: relative;
+}
+
+
+.how-it-works::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/pexels-lucie-liz-3165335.jpg');
+    background-size: cover;
+    background-color: white !important;
+    opacity: 0.6;
+    filter: blur(0px);
+    z-index: -1;
+}
+
+
+.how-it-works-step-text {
+    position: relative;
+    z-index: 1;
+    font-size: 23px;
+}
+
+.how-it-works-step-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/pexels-soumil-kumar-735911.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: -1;
+}
+.how-it-works-step-icon {
+    position: relative;
+    z-index: 1;
+    color: rgb(7, 7, 10);
+    line-height: 50px;
+    letter-spacing: 1px;
+    width: 30% !important;
+    background-color: #fff!important;
+    font-size: 26px;
+    font-weight: 700;
+    text-shadow:
+        -1px -1px 0 rgba(255, 255, 255, 0.2),
+        1px -1px 0 rgba(255, 255, 255, 0.2),
+        -1px 1px 0 rgba(255, 255, 255, 0.2),
+        1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.how-it-works-step-icon::first-letter {
+    font-size: 34px;
+}
+.how-it-works-step-icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 15px;
+    height: 100%;
+    background-image: url('../../../assets/pexels-lucie-liz-3165335.jpg');
+    background-size: cover;
+    background-position: random($limit: 1);
+    background-repeat: no-repeat;
+    opacity: 0.0;
+    filter: blur(2px);
+    z-index: -1;
+}

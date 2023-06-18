@@ -1,8 +1,0 @@
-#######
-POST http://localhost:3001/api/teams/chatMsg
-Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjBlYmUyYzk0YzEwZWJkZjA0NmI4ZSIsImlhdCI6MTY4NDA3MzQ1NCwiZXhwIjoxNjg2NjY1NDU0fQ.2ty9S9EbaSmfoCO-FS4_cwiPUebkYxkTe9tXruNgEwc
-
-{
-    "msg":"sadasdas"
-}

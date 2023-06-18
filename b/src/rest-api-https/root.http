@@ -1,0 +1,5 @@
+Coach Commands: 
+
+###
+/create Coach
+POST http://localhost:3001/api/coach/create
